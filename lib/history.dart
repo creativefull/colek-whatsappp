@@ -29,9 +29,11 @@ class _HistoryPageState extends State<HistoryPage> {
   Future<Null> getDataMessage() async {
     final SharedPreferences prefs = await _prefs;
     List data = prefs.getStringList('messages');
-    setState(() {
-      _data = data;
-    });
+    if (data != null) {
+      setState(() {
+        _data = data.reversed.toList();
+      });
+    }
   }
 
   @override

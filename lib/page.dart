@@ -165,7 +165,7 @@ class _MyPageAppState extends State<MyPageAppState> with TickerProviderStateMixi
                             keyboardType: TextInputType.phone,
                             decoration: new InputDecoration(
                               hintText: 'Phone Number With Country Code',
-                              labelText: '+628777777777',
+                              labelText: '628777777777',
                               helperText: 'Example: 628777777777',
                               border: OutlineInputBorder(),
                               prefixIcon: Padding(
