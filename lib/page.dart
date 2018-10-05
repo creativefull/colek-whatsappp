@@ -9,13 +9,7 @@ import './history.dart';
 class PageApp extends StatelessWidget {
 	@override
 	Widget build(BuildContext context) {
-		return new MaterialApp(
-			title: 'Colek WhatsApp',
-			theme : new ThemeData(
-				primaryColor: Colors.green
-			),
-			home: new MyPageAppState(),
-		);
+		return new MyPageAppState();
 	}
 }
 
@@ -35,7 +29,7 @@ class _MyPageAppState extends State<MyPageAppState> with TickerProviderStateMixi
   AnimationController _formAnimationController;
   AnimationController _panelAnimationController;
   Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-  Future<List> _data;
+  // Future<List> _data;
   TextEditingController messageController = new TextEditingController();
 
 
@@ -226,7 +220,20 @@ class _MyPageAppState extends State<MyPageAppState> with TickerProviderStateMixi
                           textColor: Colors.white,
                         ),
                       ),
-                    )
+                    ),
+                    FadeTransition(
+                      opacity: _scaleAnimation,
+                      child: new Container(
+                        padding: new EdgeInsets.all(20.0),
+                        child: new FlatButton.icon(
+                          icon: new Icon(Icons.cloud_download),
+                          label: new Text('Story Downloader [Beta]'),
+                          onPressed: () => Navigator.of(context).pushNamed('/status'),
+                          color: Colors.purple,
+                          textColor: Colors.white,
+                        ),
+                      ),
+                    ),
             ],
           ),
         ),

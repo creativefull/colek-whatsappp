@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'page.dart';
 import './history.dart';
+import './status.dart';
 
 void main() => runApp(new MaterialApp(
   theme: ThemeData(
@@ -8,6 +9,8 @@ void main() => runApp(new MaterialApp(
   ),
   routes: {
     '/' : (BuildContext context) => new PageApp(),
-    '/history' : (BuildContext context) => HistoryPage()
+    '/history' : (BuildContext context) => HistoryPage(),
+    '/status' : (BuildContext context) => StatusApp()
   },
+  initialRoute: '/',
 ));
